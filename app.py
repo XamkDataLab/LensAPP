@@ -22,13 +22,16 @@ def main():
     end_date = st.date_input("End Date:")
     patent_classification = st.text_input("Patent Classification:")
     operator = st.selectbox("Operator:", ["OR", "AND"])
+    start_date_str = start_date.strftime('%Y-%m-%d')
+    end_date_str = end_date.strftime('%Y-%m-%d')
+
 
     progress_bar = st.progress(0)
 
     if st.button("Submit"):
         search_terms = [search_term_1, search_term_2, search_term_3, search_term_4]
         search_terms = [term for term in search_terms if term]
-        patent_data = get_patent_data(start_date, end_date, search_terms, token, patent_classification, operator, progress_callback=update_progress)
+        patent_data = get_patent_data(start_date_str, end_date_str, search_terms, token, patent_classification, operator, progress_callback=update_progress)
         publication_data = get_publication_data(start_date, end_date, search_terms, token) 
         
         # Process the data
