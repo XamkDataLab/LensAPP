@@ -51,8 +51,9 @@ def main():
         authtable = extract_authors(publication_data)
         fstable = fields_of_study_table(publication_data)
 
-        st.subheader("Patents Table")
-        st.write(ptable)
+       combined_table = pd.merge(ptable, atable, on='lens_id', how='inner')
+       combined_table = combined_table[['applicant_basename', 'invention_title]]
+       st.write(combined_table)
 
 
 
