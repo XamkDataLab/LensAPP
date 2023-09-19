@@ -46,7 +46,7 @@ def main():
         ptable = patents_table(patent_data)
         atable = applicants_table(patent_data)
         ctable = cpc_classifications_table(patent_data)
-        ctable = make_cpc(ctable, r"C:\Users\hvato01.KSAMK\Downloads\cpc_ultimate_titles.json")
+        ctable = make_cpc(ctable, "cpc_ultimate_titles.json")
         pubtable = publication_table(publication_data)
         authtable = extract_authors(publication_data)
         fstable = fields_of_study_table(publication_data)
