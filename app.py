@@ -7,7 +7,7 @@ import json
 
 token = st.secrets["token"]["value"]
 
-def update_progress(value):
+def update_progress(value, progress_bar):
     progress_bar.progress(value)
 
 def main():
