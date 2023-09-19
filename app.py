@@ -32,7 +32,7 @@ def main():
         search_terms = [search_term_1, search_term_2, search_term_3, search_term_4]
         search_terms = [term for term in search_terms if term]
         patent_data = get_patent_data(start_date_str, end_date_str, search_terms, token, patent_classification, operator, progress_callback=update_progress)
-        publication_data = get_publication_data(start_date, end_date, search_terms, token) 
+        publication_data = get_publication_data(start_date_str, end_date_str, search_terms, token) 
         
         # Process the data
         patents_found = len(patent_data)
