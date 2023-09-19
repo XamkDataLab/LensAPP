@@ -2,7 +2,7 @@ import json
 import requests
 import time
 
-def get_patent_data(start_date, end_date, terms, token, class_cpc_prefix=None, progress_callback=None):
+def get_potent_data(start_date, end_date, terms, token, class_cpc_prefix=None, operator="OR", progress_callback=None):
     
     url = 'https://api.lens.org/patent/search'
     include = ["lens_id", "date_published", "jurisdiction", "biblio", "doc_key", 
