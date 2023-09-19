@@ -28,7 +28,7 @@ def main():
 
     progress_bar = st.progress(0)
 
-    if st.button("Submit"):
+    if st.button("Hae"):
         search_terms = [search_term_1, search_term_2, search_term_3, search_term_4]
         search_terms = [term for term in search_terms if term]
         patent_data = get_patent_data(start_date_str, end_date_str, search_terms, token, patent_classification, operator, progress_callback=lambda value: update_progress(value, progress_bar))
