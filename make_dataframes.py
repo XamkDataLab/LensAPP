@@ -150,7 +150,8 @@ def breakdown_cpc(code):
     return pd.Series([section, c_class, subclass, group, subgroup])
 
 def make_cpc(df, cpc_json_file):
-    
+
+    cpc_json_file = "cpc_ultimate_titles.json"
     cpc = pd.read_json(cpc_json_file)
     df[['Section', 'Class', 'Subclass', 'Group', 'Subgroup']] = df['cpc_classification'].apply(breakdown_cpc)
     df['Group'] = df['Group'].apply(lambda x: x + "/00")
