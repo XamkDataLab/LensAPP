@@ -7,6 +7,9 @@ import json
 
 token = st.secrets["token"]["value"]
 
+def update_progress(value):
+    progress_bar.progress(value)
+
 def main():
     st.title("Search Form")
     
@@ -19,6 +22,8 @@ def main():
     end_date = st.date_input("End Date:")
     patent_classification = st.text_input("Patent Classification:")
     operator = st.selectbox("Operator:", ["OR", "AND"])
+
+    progress_bar = st.progress(0)
 
     if st.button("Submit"):
         search_terms = [search_term_1, search_term_2, search_term_3, search_term_4]
