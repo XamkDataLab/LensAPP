@@ -55,6 +55,8 @@ def main():
         combined_table = combined_table[['extracted_name', 'invention_title']]
         st.write(combined_table)
 
+        st.write(pubtable)
+
 
 
         #st.download_button("Download Patents Excel", ptable.to_excel(index=False))
