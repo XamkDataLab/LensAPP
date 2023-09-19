@@ -51,12 +51,17 @@ def main():
         authtable = extract_authors(publication_data)
         fstable = fields_of_study_table(publication_data)
 
-        st.download_button("Download Patents Excel", ptable.to_excel(index=False))
-        st.download_button("Download PatentApplicants Excel", atable.to_excel(index=False))
-        st.download_button("Download PatentClassifications Excel", ctable.to_excel(index=False))
-        st.download_button("Download Publications Excel", pubtable.to_excel(index=False))
-        st.download_button("Download PublicationAuthors Excel", authtable.to_excel(index=False))
-        st.download_button("Download PublicationFields Excel", fstable.to_excel(index=False))
+        st.subheader("Patents Table")
+        st.write(ptable)
+
+
+
+        #st.download_button("Download Patents Excel", ptable.to_excel(index=False))
+        #st.download_button("Download PatentApplicants Excel", atable.to_excel(index=False))
+        #st.download_button("Download PatentClassifications Excel", ctable.to_excel(index=False))
+        #st.download_button("Download Publications Excel", pubtable.to_excel(index=False))
+        #st.download_button("Download PublicationAuthors Excel", authtable.to_excel(index=False))
+        #st.download_button("Download PublicationFields Excel", fstable.to_excel(index=False))
 
 if __name__ == "__main__":
     main()
